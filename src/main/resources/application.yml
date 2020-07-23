@@ -1,0 +1,22 @@
+server:
+  port: 80 #\u542F\u52A8\u7AEF\u53E380
+#  servlet:
+#    context-path: /apis  #\u914D\u7F6E\u4E0A\u4E0B\u6587\u8DEF\u5F84
+spring:
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #192.168.5.196 120.25.223.121 shangou_db
+    url: jdbc:mysql://localhost:3306/qrtz_db?serverTimezone=Asia/Shanghai  # \u6570\u636E\u5E93\u5730\u5740
+    type: com.alibaba.druid.pool.DruidDataSource
+  messages:
+    basename: i18n/validate  #\u8D44\u6E90 \u8BFB\u53D6\u6587\u4EF6\u6240\u5728\u76EE\u5F55
+  profiles:
+    active: dev
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true  # \u6570\u636E\u5E93\u4E0B\u5212\u7EBF\u8F6C\u9A7C\u5CF0
+  #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #\u6709\u4E9B\u73A9\u5BB6\u662F\u8FD9\u4E48\u914D\u7F6E\u7684
+  mapper-locations: classpath*:mybatis/mapper/**/*.xml  # mybatis\u7684mapper\u6587\u4EF6\u4F4D\u7F6E
+
